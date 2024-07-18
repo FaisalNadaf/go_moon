@@ -16,7 +16,8 @@ class Homepage extends StatelessWidget {
         child: Container(
           height: _deviceHeight,
           width: _deviceWidget,
-          child: _TextGoMoon(),
+          padding: EdgeInsets.symmetric(horizontal: _deviceWidget * 0.12),
+          child: _destinationDropDown(),
         ),
       ),
     );
@@ -24,10 +25,10 @@ class Homepage extends StatelessWidget {
 
   Widget _TextGoMoon() {
     return const Text(
-      '#GoMoon',
+      '⚡GoMoon',
       style: TextStyle(
           color: Color.fromRGBO(255, 255, 255, 1),
-          fontSize: 70,
+          fontSize: 60,
           fontWeight: FontWeight.w900),
     );
   }
@@ -38,6 +39,36 @@ class Homepage extends StatelessWidget {
           image: DecorationImage(
               fit: BoxFit.contain,
               image: AssetImage("assets/images/astro_moon.png"))),
+    );
+  }
+
+  Widget _Faisal() {
+    return Container(
+      child: const Text(
+        'Faisal',
+        style: TextStyle(
+          color: Colors.teal,
+          fontSize: 40,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
+    );
+  }
+
+  Widget _destinationDropDown() {
+    List<DropdownMenuItem<String>> _items = [
+      'james',
+      'jack',
+      'jons',
+      'faisal',
+    ].map((e) {
+      return DropdownMenuItem(value: e, child: Text(e));
+    }).toList();
+    return Container(
+      child: DropdownButton(
+        onChanged: (_) {},
+        items: _items,
+      ),
     );
   }
 }
