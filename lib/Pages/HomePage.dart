@@ -1,7 +1,5 @@
-// ignore: file_names
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:g/Widgets/Custom_dropDown.dart';
 
 // ignore: must_be_immutable
 class Homepage extends StatelessWidget {
@@ -32,8 +30,8 @@ class Homepage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    _passangerAndTicketDropDown(),
                     _destinationDropDown(),
+                    _passangerAndTicketDropDown(),
                   ],
                 ),
               ],
@@ -75,125 +73,41 @@ class Homepage extends StatelessWidget {
   }
 
   Widget _destinationDropDown() {
-    // ignore: no_leading_underscores_for_local_identifiers
-    List<String> _items = [
-      'james',
-      'jack',
-      'jons',
-      'faisal',
-    ];
-    return Container(
+    return Custom_dropDown(
+      values: const [
+        'james',
+        'jack',
+        'jons',
+        'faisal',
+      ],
       width: _deviceWidget,
-      margin: EdgeInsets.symmetric(vertical: _deviceHeight * 0.02),
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(53, 53, 53, 1.0),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: DropdownButton(
-        underline: Container(),
-        padding: EdgeInsets.symmetric(
-          horizontal: _deviceWidget * 0.05,
-        ),
-        borderRadius: BorderRadius.circular(10),
-        value: _items.first,
-        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w400,
-        ),
-        onChanged: (_) {},
-        items: _items.map(
-          (e) {
-            return DropdownMenuItem(value: e, child: Text(e));
-          },
-        ).toList(),
-      ),
     );
   }
 
   Widget _passangerCountDropDown() {
-    // ignore: no_leading_underscores_for_local_identifiers
-    List<String> _noOfPerson = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-    ];
-    return Container(
+    return Custom_dropDown(
+      values: const [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+      ],
       width: _deviceWidget * 0.3,
-      
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(53, 53, 53, 1.0),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: DropdownButton(
-        underline: Container(),
-        padding: EdgeInsets.symmetric(
-          horizontal: _deviceWidget * 0.05,
-        ),
-        borderRadius: BorderRadius.circular(10),
-        value: _noOfPerson.first,
-        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
-        style: const TextStyle(
-          
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w400,
-        ),
-        onChanged: (_) {},
-        items: _noOfPerson.map(
-          (e) {
-            return DropdownMenuItem(
-              value: e,
-              child: Text(e),
-            );
-          },
-        ).toList(),
-      ),
     );
   }
 
   Widget _ticketClassDropDown() {
-    // ignore: no_leading_underscores_for_local_identifiers
-    List<String> _noOfPerson = [
-      'Economy',
-      'Bussiness',
-      'Classic',
-      'Local',
-    ];
-    return Container(
+    return Custom_dropDown(
+      values: const [
+        'Economy',
+        'Bussiness',
+        'Classic',
+        'Local',
+      ],
       width: _deviceWidget * 0.4,
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(53, 53, 53, 1.0),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: DropdownButton(
-        underline: Container(),
-        padding: EdgeInsets.symmetric(
-          horizontal: _deviceWidget * 0.05,
-        ),
-        borderRadius: BorderRadius.circular(10),
-        value: _noOfPerson.first,
-        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w400,
-        ),
-        onChanged: (_) {},
-        items: _noOfPerson.map(
-          (e) {
-            return DropdownMenuItem(
-              value: e,
-              child: Text(e),
-            );
-          },
-        ).toList(),
-      ),
     );
   }
 
