@@ -16,7 +16,9 @@ class Custom_dropDown extends StatelessWidget {
     _deviceWidget = MediaQuery.of(context).size.width;
     return Container(
       width: width,
-      margin: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+      margin: EdgeInsets.symmetric(
+        vertical: _deviceHeight * 0.01,
+      ),
       decoration: BoxDecoration(
         color: const Color.fromRGBO(53, 53, 53, 1.0),
         borderRadius: BorderRadius.circular(10),

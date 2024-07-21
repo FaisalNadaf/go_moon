@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:g/Widgets/Custom_button.dart';
 import 'package:g/Widgets/Custom_dropDown.dart';
 
 // ignore: must_be_immutable
@@ -14,59 +15,40 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-            height: _deviceHeight,
-            width: _deviceWidget,
-            padding: EdgeInsets.symmetric(
-              horizontal: _deviceWidget * 0.12,
-              vertical: _deviceHeight * 0.02,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _TextGoMoon(),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    _destinationDropDown(),
-                    _passangerAndTicketDropDown(),
-                  ],
-                ),
-              ],
-            )),
-      ),
-    );
-  }
-
-  Widget _TextGoMoon() {
-    return const Text(
-      '⚡GoMoon',
-      style: TextStyle(
-          color: Color.fromRGBO(255, 255, 255, 1),
-          fontSize: 60,
-          fontWeight: FontWeight.w900),
-    );
-  }
-
-  Widget _astroImage() {
-    return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.contain,
-              image: AssetImage("assets/images/astro_moon.png"))),
-    );
-  }
-
-  Widget _Faisal() {
-    return Container(
-      child: const Text(
-        'Faisal',
-        style: TextStyle(
-          color: Colors.teal,
-          fontSize: 40,
-          fontWeight: FontWeight.w900,
+          height: _deviceHeight,
+          width: _deviceWidget,
+          padding: EdgeInsets.symmetric(
+            vertical: _deviceHeight * 0.02,
+            horizontal: _deviceWidget * 0.06,
+          ),
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(child: _TextGoMoon()),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      _destinationDropDown(),
+                      _passangerAndTicketDropDown(),
+                      CustomButton(
+                        buttonText: 'Book ride',
+                        buttomWidth: _deviceWidget,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: _astroImage(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -84,6 +66,31 @@ class Homepage extends StatelessWidget {
     );
   }
 
+  Widget _TextGoMoon() {
+    return const Text(
+      '⚡GoMoon',
+      style: TextStyle(
+          color: Color.fromRGBO(255, 255, 255, 1),
+          fontSize: 70,
+          fontWeight: FontWeight.w900),
+    );
+  }
+
+  Widget _astroImage() {
+    return Container(
+      height: _deviceHeight * 0.6,
+      width: _deviceWidget * 0.7,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.contain,
+          image: AssetImage(
+            "assets/images/astro_moon.png",
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _passangerCountDropDown() {
     return Custom_dropDown(
       values: const [
@@ -95,7 +102,7 @@ class Homepage extends StatelessWidget {
         '6',
         '7',
       ],
-      width: _deviceWidget * 0.3,
+      width: _deviceWidget * 0.35,
     );
   }
 
@@ -107,7 +114,7 @@ class Homepage extends StatelessWidget {
         'Classic',
         'Local',
       ],
-      width: _deviceWidget * 0.4,
+      width: _deviceWidget * 0.5,
     );
   }
 

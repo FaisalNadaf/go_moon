@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Go Moon',
-      theme: ThemeData(scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1)),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1),
+      ),
       home: Homepage(),
     );
   }
