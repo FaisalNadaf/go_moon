@@ -71,7 +71,7 @@ class Homepage extends StatelessWidget {
       '⚡GoMoon',
       style: TextStyle(
           color: Color.fromRGBO(255, 255, 255, 1),
-          fontSize: 70,
+          fontSize: 60,
           fontWeight: FontWeight.w900),
     );
   }
@@ -79,7 +79,7 @@ class Homepage extends StatelessWidget {
   Widget _astroImage() {
     return Container(
       height: _deviceHeight * 0.6,
-      width: _deviceWidget * 0.7,
+      width: _deviceWidget * 0.6,
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.contain,

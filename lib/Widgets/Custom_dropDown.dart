@@ -36,7 +36,7 @@ class Custom_dropDown extends StatelessWidget {
           fontSize: 20,
           fontWeight: FontWeight.w400,
         ),
-        onChanged: (_) {},
+        onChanged: (_value) {},
         items: values.map(
           (e) {
             return DropdownMenuItem(value: e, child: Text(e));
